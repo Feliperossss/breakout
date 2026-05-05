@@ -7,6 +7,7 @@ public class PlayerScript : MonoBehaviour
     private Vector2 direction;
     private float playerInitialY;
     public float speed = 1;
+    public Rigidbody2D myRigidBody2D;
     private void Start()
     {
     
@@ -23,7 +24,7 @@ public class PlayerScript : MonoBehaviour
       Cursor.lockState = CursorLockMode.Confined;
       
       Vector3 movement = new Vector3(direction.x, 0, 0);
-      this.transform.position += movement * speed * Time.deltaTime;
+      myRigidBody2D.linearVelocity = movement * speed;
 
     }
 
