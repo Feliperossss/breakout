@@ -24,7 +24,7 @@ public class PlayerScript : MonoBehaviour
       Cursor.lockState = CursorLockMode.Confined;
       
       Vector3 movement = new Vector3(direction.x, 0, 0);
-      myRigidBody2D.linearVelocity = movement * speed;
+      myRigidBody2D.linearVelocity = movement * speed ;
 
     }
 
