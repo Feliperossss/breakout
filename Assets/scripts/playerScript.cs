@@ -4,6 +4,25 @@ using UnityEngine.Rendering;
 
 public class PlayerScript : MonoBehaviour
 {
+
+
+    #region  Singleton
+    private static  PlayerScript _instance;
+
+    public static PlayerScript instance => _instance;
+
+    private void Awake()
+    {
+        if(_instance != null)
+        {
+            Destroy(gameObject); 
+        }
+        else
+        {
+            _instance = this;
+        }
+    }
+    #endregion
     private Vector2 direction;
     private float playerInitialY;
     public float speed = 1;
